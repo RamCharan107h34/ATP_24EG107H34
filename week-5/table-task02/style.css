@@ -1,0 +1,26 @@
+table{
+    width: 700px;
+    margin: auto;
+    margin-top: 100px;
+}
+th{
+    font-size: 18px;
+    text-align: left;
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+table,td{
+    text-align: center;
+    border: 3px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+ul{
+    list-style: none;
+    padding: 5px;
+}
+
+li{
+    margin-bottom: 5px;
+}
