@@ -1,0 +1,61 @@
+### create new author user
+POST http://localhost:4000/auth/users
+Content-Type: application/json
+
+{
+    "firstName": "kiran",
+    "lastName": "",
+    "email":"author02@gmail.com",
+    "password":"author02",
+    "role": "AUTHOR",
+    "profilImgUrl":"profil.png"
+}
+### Login with email and password
+POST http://localhost:4000/auth/login
+Content-Type: application/json
+
+{
+    "email":"author@gmaill.com",
+    "password":"author01"
+}
+### logout 
+GET  http://localhost:4000/auth/logout
+Content-Type: application/json
+
+{
+    "email":"author@gmaill.com",
+    "password":"author02"
+}
+
+### create article 
+POST http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "author": "69b3919bbf5a82e1da02bddb",
+    "title": "Article - 1 by Author - 1",
+    "category": "programming",
+    "content": "js"
+}
+### get 
+GET http://localhost:4000/author-api/articles
+
+### edit artical
+
+PUT http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId": "69b3d0e8154fa12746278879",
+    "title": "Article - 1 by Author - 1",
+    "category": "programming",
+    "content": "py"
+}
+### soft delete articles
+PATCH http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "articleId": "69b3d0e8154fa12746278879",
+    "isArticleActive": true
+}

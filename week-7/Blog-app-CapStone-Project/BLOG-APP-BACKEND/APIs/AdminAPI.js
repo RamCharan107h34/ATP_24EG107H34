@@ -1,0 +1,43 @@
+import exp from "express"
+import {UserModel} from "../models/UserModel.js"
+import {ArticleModel} from "../models/ArticleModel.js"
+import {verifyToken} from "../middlewares/verifyToken.js"
+
+export const adminApp = exp.Router()
+// get all users
+adminApp.get("/users",verifyToken("ADMIN"),async(req,res)=>{
+    // get all usres
+    const userList = await UserModel.find()
+    // filter users where user is not Admin
+    const users = userList.filter((user)=>user.role !== "ADMIN" && user.role !== "AUTHOR" )
+    // send res
+    res.status(200).json({payload:users})    
+})
+
+// get all authors
+adminApp.get("/authors",verifyToken("ADMIN"),async(req,res)=>{
+    // get all usres
+    const userList = await UserModel.find()
+    // filter users where user is not Admin
+    const users = userList.filter((user)=>user.role !== "ADMIN" && user.role !== "USER" )
+    // send res
+    res.status(200).json({payload:users})    
+})
+
+// Activate or deactivate a user
+adminApp.patch("/user",verifyToken("ADMIN"), async(req,res)=>{
+    // get body of the req
+    const {userId, isUserActive} = req.body
+    // find user by user id
+    const userDB = await UserModel.findById(userId)
+    // if user is in same state as the given state
+    if(isUserActive === userDB.isUserActive){
+        return res.status(200).json({message:"User is already in the same state"})
+    }
+    // change it in the doc
+    userDB.isUserActive = isUserActive
+    // save doc
+    userDB.save()
+    // send res
+    res.status(200).json({message:"User",payload:userDB})
+})
