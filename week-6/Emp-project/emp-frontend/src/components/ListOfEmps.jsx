@@ -7,6 +7,7 @@ function ListOfEmps() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate()
+  const API = import.meta.env.VITE_API_URL;
 
 
   const gotoEmployee = (empObj) =>{
@@ -23,7 +24,7 @@ function ListOfEmps() {
   const deleteEmpByID = async (id) => {
     try{
       setLoading(true);
-      let res = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/emp-api/employees/${id}`)
+      let res = await axios.delete(`${API}/emp-api/employees/${id}`)
       if(res.status === 200){
         // get latest emps data
         getEmps();

@@ -9,6 +9,7 @@ import { counterContextObj } from "./ContextProvider";
 function EditEmployee() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+   const API = import.meta.env.VITE_API_URL;
 
   const {
     register,
@@ -34,7 +35,7 @@ function EditEmployee() {
     try{
       setLoading(true)
     // make http put req
-    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/emp-api/employees/${state._id}`,modifiedEmp)
+    const res = await axios.put(`${API}/emp-api/employees/${state._id}`,modifiedEmp)
     if(res.status === 200){
       // navigate to ListOfEmps
       navigate("/list")

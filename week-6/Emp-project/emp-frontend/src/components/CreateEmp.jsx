@@ -8,6 +8,7 @@ function CreateEmp() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+   const API = import.meta.env.VITE_API_URL;
 
   const {
     register,
@@ -20,7 +21,7 @@ function CreateEmp() {
     try {
       setLoading(true);
       //make HTTP POST req
-      let res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/emp-api/employees`, {
+      let res = await fetch(`${API}/emp-api/employees`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newEmpObj),
