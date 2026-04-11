@@ -39,7 +39,7 @@ function AuthorsList() {
       try {
         setLoading(true)
        //read articles of current author
-       let res = await axios.get("http://localhost:4000/admin-api/authors",{withCredentials:true})
+       let res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/admin-api/authors`,{withCredentials:true})
        if(res.status === 200){
         setuserList(res.data.payload)
        }
@@ -59,7 +59,7 @@ function AuthorsList() {
   const userDelORactivate = async (user) => {
     try{
       setLoading(true)
-      let res = await axios.patch("http://localhost:4000/admin-api/user",
+      let res = await axios.patch(`${import.meta.env.VITE_BACKEND_URL}/admin-api/user`,
         {
           "userId": user._id,
           "isUserActive": !user.isUserActive

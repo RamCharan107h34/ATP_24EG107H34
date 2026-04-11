@@ -13,7 +13,7 @@ const app = exp()
 //add cors middleware
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: [process.env.FORNTEND_URL],
     credentials: true
   }),
 );

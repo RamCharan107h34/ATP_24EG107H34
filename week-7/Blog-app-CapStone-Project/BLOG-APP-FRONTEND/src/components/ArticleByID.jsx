@@ -48,7 +48,7 @@ function ArticleByID() {
       setLoading(true);
 
       try {
-        const res = await axios.get(`http://localhost:4000/user-api/article/${id}`, { withCredentials: true });
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user-api/article/${id}`, { withCredentials: true });
 
         setArticle(res.data.payload);
       } catch (err) {
@@ -78,7 +78,7 @@ function ArticleByID() {
 
     try {
       const res = await axios.patch(
-        `http://localhost:4000/author-api/articles`,
+        `${import.meta.env.VITE_BACKEND_URL}/author-api/articles`,
         {articleId: id, isArticleActive: newStatus },
         { withCredentials: true },
       );
@@ -209,9 +209,4 @@ function ArticleByID() {
 
 export default ArticleByID;
 
-// {
-//   "user":"6989799b7013502767d3f82b",
-//   "articleId":"6989750220ce5bf826ec4f7e",
-//   "comment":"good article"
 
-// }

@@ -36,7 +36,7 @@ function WriteArticles() {
       // set loading true
       setLoading(true);
       // make a post req to save article
-      let res = await axios.post("http://localhost:4000/author-api/article",articleObj,{withCredentials: true})
+      let res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/author-api/article`,articleObj,{withCredentials: true})
       //nagivate to articles
       if(res.status === 201){
         toast.success("Article published successfully")
