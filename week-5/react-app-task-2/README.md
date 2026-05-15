@@ -1,16 +1,46 @@
-# React + Vite
+# User List Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application built with Vite that displays a list of users with their profile information. The app features a navigation bar, user list display, and footer.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Responsive Design**: Built with Tailwind CSS for a modern, responsive UI
+- **User List Display**: Showcases users with their names, emails, and profile images
+- **Navigation Bar**: Header section with logo and navigation links (Home, Signup, Login)
+- **Footer Section**: Footer component for additional information and links
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** 19.2.4 - UI library
+- **Vite** 8.0.0 - Build tool and dev server
+- **Tailwind CSS** 4.2.1 - Utility-first CSS framework
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+Starts the development server with HMR support at http://localhost:5173
+
+### Build
+
+```bash
+npm run build
+```
+
+Creates an optimized production build.
+
+### Preview
+
+```bash
+npm run preview
+```

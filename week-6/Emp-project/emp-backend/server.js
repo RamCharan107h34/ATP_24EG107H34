@@ -5,6 +5,11 @@ import  {config} from 'dotenv'
 import cors from "cors";
 config()
 
+import dns from "node:dns/promises";
+
+dns.setServers(["1.1.1.1", "1.0.0.1"]);
+
+
 const app = exp();
 //add cors middleware
 app.use(

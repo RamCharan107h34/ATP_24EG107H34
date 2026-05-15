@@ -2,7 +2,7 @@
 
 This folder contains three HTML practice files for a week 4 assignment.
 
-## Files
+## Tasks
 
 - `task01.html`
   - A simple HTML page with paragraphs, a heading, a link, and an unordered list.

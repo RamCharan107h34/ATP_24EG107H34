@@ -18,8 +18,8 @@ config()
     let allowedRoles = ["USER", "AUTHOR"];
     //get user from req
     const newUser = req.body;
-    console.log(newUser);
-    console.log(req.file);
+    // console.log(newUser);
+    // console.log(req.file);
 
     //check role
     if (!allowedRoles.includes(newUser.role)) {
@@ -66,7 +66,8 @@ config()
         if(!user){
             return res.status(400).json({message:"Invalid Email"})
         }
-        console.log(user)
+        // console.log(user)
+        // if user not active
         if(user.isUserActive === false){
             return res.status(403).json({message:"user not found"})
         }
@@ -75,7 +76,6 @@ config()
         if(!isMatched){
             return res.status(400).json({message:"Invalid password"})
         }
-
 
         // If email and password are correct
         // create jwt token for authentication
@@ -97,11 +97,11 @@ config()
         
 
         // store token in HTTP-only cookie
-        res.cookie("token",signtoken,{
+        res.cookie("token", signtoken, {
             httpOnly: true,
-            sameSite: 'lax',
-            secure: false
-        })
+            secure: true,        // REQUIRED on Render (HTTPS)
+            sameSite: "none"     // REQUIRED for Vercel ↔ Render
+        });
 
         // delete password
 

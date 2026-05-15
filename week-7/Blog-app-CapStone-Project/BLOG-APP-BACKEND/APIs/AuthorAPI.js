@@ -54,7 +54,7 @@ authorApp.put("/article",verifyToken("AUTHOR"),async(req,res)=>{
         {new: true}
     )
 
-    console.log(modifedarticle)
+    // console.log(modifedarticle)
 
     if(!modifedarticle){
         return res.status(403).json({message:"Not authorized to edit article"})

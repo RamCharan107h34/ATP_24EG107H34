@@ -9,11 +9,13 @@ import cookiParser from "cookie-parser"
 import cors from "cors";
 config()
 const app = exp()
-
+import dns from 'dns';
+// Change DNS
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
 //add cors middleware
 app.use(
   cors({
-    origin: [process.env.FORNTEND_URL],
+    origin: process.env.FRONTEND_URL,
     credentials: true
   }),
 );

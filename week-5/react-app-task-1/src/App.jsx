@@ -1,10 +1,9 @@
 import './App.css'
 import Product from './components/Product';
  
-
 function App(){
-  // state
-  let products = [
+  // Static product list 
+  const products = [
   {
     id: 1,
     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -101,7 +100,7 @@ function App(){
       count: 100
     }
   }];
-  // return react element
+  // return App element
   return (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
         {

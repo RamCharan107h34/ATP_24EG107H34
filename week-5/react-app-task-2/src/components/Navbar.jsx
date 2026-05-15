@@ -1,5 +1,6 @@
 
 function Navbar(){
+    // return Navbar component with logo and navigation links
     return(
         <div className="bg-gray-200 p-5 flex flex-row justify-between">
             <h1>LOGO</h1>

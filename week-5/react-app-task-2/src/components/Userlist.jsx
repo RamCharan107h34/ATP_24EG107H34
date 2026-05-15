@@ -1,6 +1,7 @@
 import User from "./user";
 
 function Userlist(){
+  // arrray of user objects with name, email and image properties
     const users = [
   {
     name: "Aarav Sharma",
@@ -53,6 +54,7 @@ function Userlist(){
     image: "https://randomuser.me/api/portraits/women/15.jpg"
   }
 ];
+// return Userlist component
     return(
         <div className="grid grid-cols-3 gap-5">
             {

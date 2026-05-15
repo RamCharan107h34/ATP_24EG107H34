@@ -6,6 +6,7 @@ import Userlist from './components/Userlist'
 
 function App(){
 
+  // return App component with Navbar, Userlist and Footer components
   return (
     <div>
       <Navbar />

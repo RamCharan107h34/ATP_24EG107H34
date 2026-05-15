@@ -111,7 +111,7 @@ function ArticleByID() {
     //add artcileId
     commentObj.articleId = article._id;
     console.log(commentObj);
-    let res = await axios.put("http://localhost:4000/user-api/articles", commentObj, { withCredentials: true });
+    let res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/user-api/articles`, commentObj, { withCredentials: true });
     if (res.status === 200) {
       // toast.success(res.data.message);
       setArticle(res.data.payload);

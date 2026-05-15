@@ -1,6 +1,7 @@
 import axios from "axios";
 import { create } from "zustand";
 
+
 export const useAuth = create((set) => ({
   currentUser: null,
   loading: false,
