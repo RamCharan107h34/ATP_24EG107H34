@@ -1,6 +1,5 @@
 # Week 2
 
-This folder contains JavaScript practice tasks for Week 2. The files are organized by topic and represent a series of hands-on exercises using array methods, object handling, and small project simulations.
 
 ## Contents
 
