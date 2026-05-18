@@ -1,16 +1,36 @@
-# React + Vite
+# Counter Context React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project overview
 
-Currently, two official plugins are available:
+- Uses React 19, Vite, and Tailwind CSS.
+- Provides a single `CounterContextProvider` that shares counter state across multiple counter components.
+- Includes four counter panels (`Counter1`, `Counter2`, `Counter3`, `Counter4`) that all read from the same context.
+- Each counter can increment or decrement the shared value.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Global shared counter state via `React.createContext`
+- `CounterContextProvider` wraps the app in `src/main.jsx`
+- Tailwind CSS classes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Project structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/main.jsx` - application entry point
+- `src/App.jsx` - renders the main layout
+- `src/components/CounterContextProvider.jsx` - context provider and shared counter state
+- `src/components/Counter1.jsx` - counter component consuming context
+- `src/components/Counter2.jsx` - counter component consuming context
+- `src/components/Counter3.jsx` - counter component consuming context
+- `src/components/Counter4.jsx` - counter component consuming context
+- `src/components/RouterLayout.jsx` - grid layout for counter components
+
+## How it works
+
+The `CounterContextProvider` exposes:
+
+- `counter` value
+- `incrementCounter()` function
+- `decrementCounter()` function
+
+All counter components use `useContext(counterContextObj)` to read and update the shared state.
