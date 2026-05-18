@@ -1,6 +1,4 @@
-# Week 1 JavaScript Tasks
-
-This repository contains a collection of basic JavaScript programming tasks designed for learning fundamental concepts such as conditionals, loops, arrays, and functions.
+# Week 1
 
 ## Tasks Overview
 
