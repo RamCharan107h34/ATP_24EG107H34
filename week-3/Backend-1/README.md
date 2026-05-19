@@ -40,6 +40,7 @@ db.users.find()
 5. Query operators
 
 - db.collection-name.find({fild-name:{$eq:"ram"}})
+
 | Operator | Meaning                 | Example Query                     |
 | -------- | ----------------------- | --------------------------------- |
 | **$eq**  | Equal to                | `{ age: { $eq: 25 } }`            |
@@ -62,7 +63,7 @@ db.users.find()
 | **$not** | Negates condition           | `{ age: { $not: { $gt:30 } } }`                |
 | **$nor** | None of conditions true     | `{ $nor: [ {age:25}, {name:"John"} ] }`        |
 
-   1.2 logical
+1.2 logical
    db.users.find({$and:[{age:{$gt:21}},{city:{$eq:"hyderabad"}}]})
 6. update doc of collection 
 - db.users.find({city:{$in:["hyderabad","chenni"]}})
