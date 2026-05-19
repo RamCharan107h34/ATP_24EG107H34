@@ -1,12 +1,5 @@
 # Counter Context React
 
-## Project overview
-
-- Uses React 19, Vite, and Tailwind CSS.
-- Provides a single `CounterContextProvider` that shares counter state across multiple counter components.
-- Includes four counter panels (`Counter1`, `Counter2`, `Counter3`, `Counter4`) that all read from the same context.
-- Each counter can increment or decrement the shared value.
-
 ## Features
 
 - Global shared counter state via `React.createContext`
