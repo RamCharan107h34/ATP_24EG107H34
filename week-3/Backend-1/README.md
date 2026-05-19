@@ -35,8 +35,8 @@ db.users.findOne( condition )
 # without cond it gives first doc
 or
 db.users.find()
-# returns all doc
-# if not found it returns null
+- returns all doc
+- if not found it returns null
 5. Query operators
 
 - db.collection-name.find({fild-name:{$eq:"ram"}})
