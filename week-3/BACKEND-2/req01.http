@@ -1,0 +1,43 @@
+### Read all users 
+GET http://localhost:4000/user-api/users
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlamFAZ2FtaWwuY29tIiwiaWF0IjoxNzcyODc4NDg5LCJleHAiOjE3NzI4Nzg0OTl9.HnhZdHq9dJUJG0dATGg1rF2IXbhQgZWLnFuwUhWExV8; Path=/; HttpOnly; SameSite=Lax
+
+### Read a user by email
+GET http://localhost:4000/user-api/user
+
+### create new user
+POST http://localhost:4000/user-api/users 
+Content-Type: application/json
+
+{
+    "username":"ram charan",
+    "password": "7539514682",
+    "email": "ram@gamil.com",
+    "age": 21
+}
+
+### update a user
+PUT http://localhost:4000/user-api/users/69aa9823ad52d82ab9c5049c
+Content-Type: application/json
+
+{
+    "username":"ram",
+    "password": "1256444",
+    "email": "ramcharan@gamil.com",
+    "age": 23
+}
+
+### Delete a user
+DELETE http://localhost:4000/user-api/users/69aa8c67c638189faa9f5f38
+
+### login
+POST http://localhost:4000/user-api/auth 
+Content-Type: application/json
+
+{
+    "email": "teja@gamil.com",
+    "password": "8654226548"
+}
+
+### add product to user cart
+PUT http://localhost:4000/user-api/cart/poduct-id/69ab0b09b0f0fd8225b81e9c
